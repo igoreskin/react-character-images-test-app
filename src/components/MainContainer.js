@@ -1,5 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ListView from './ListView';
+import ImageDisplayView from './ImageDisplayView';
+import styles from './MainContainer.module.css';
 
 const MainContainer = () => {
 
@@ -11,8 +14,11 @@ const MainContainer = () => {
   ]
 
   return (
-    <div>
-      <ListView characters={characters}/>
+    <div className={styles.wrapper}>
+      <Route exact path='/' render={() => <ListView characters={characters} />} />
+      <Route path='/:id' render={() => <ImageDisplayView /> } />
+
+
     </div>
   )
 
