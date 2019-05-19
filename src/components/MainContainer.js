@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 import ListView from './ListView';
-import ImageDisplayView from './ImageDisplayView';
 import styles from './MainContainer.module.css';
 
-const MainContainer = () => {
 
-  const characters = [
-    { "id": "0", "image": "images/luke.jpg", "name": "Luke Skywalker" },
-    { "id": "1", "image": "images/darth.jpg", "name": "Darth Vader" },
-    { "id": "2", "image": "images/obi.png", "name": "Ob-wan Kenobi" },
-    { "id": "3", "image": "images/r2d2.jpg", "name": "R2-D2" }
-  ]
+class MainContainer extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
+    this.state = {
+      characters: []
+    }
+  }
+
+  componentDidMount() {
+    axios.get('characters.json')
+    .then(response => {
+      this.setState({ characters: response.data }, console.log(this.state.characters))
+    })
+    .catch(error => console.log(error))
+  }
+
+  render() {
+    return (
     <div className={styles.wrapper}>
-      <ListView characters={characters} />
+      <ListView characters={this.state.characters} />
+        {console.log(this.state.characters)}
     </div>
   )
+  }
 
 }
 
