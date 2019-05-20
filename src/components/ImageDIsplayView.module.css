@@ -12,3 +12,12 @@ img {
   font-size: 200%;
   margin-top: 70px;
 }
+
+.button {
+  margin-top: 30px;
+  background-color: rgb(238, 227, 227);
+  border: none;
+  height: 35px;
+  width: 200px;
+  font-size: 100%;
+}

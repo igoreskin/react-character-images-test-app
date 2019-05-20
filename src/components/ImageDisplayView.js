@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import styles from './ImageDIsplayView.module.css';
 
 class ImageDisplayView extends Component {
@@ -28,6 +29,7 @@ class ImageDisplayView extends Component {
       <div className={styles.wrapper}>
         <img src={this.state.character.image} alt={this.state.character.name}/>
         <div className={styles.name}>{this.state.character.name}</div>
+        <Link to={'/'}><button className={styles.button}>Back to all characters</button></Link>
       </div>
     )
   }
