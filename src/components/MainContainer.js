@@ -16,7 +16,7 @@ class MainContainer extends Component {
   componentDidMount() {
     axios.get('characters.json')
     .then(response => {
-      this.setState({ characters: response.data }, console.log(this.state.characters))
+      this.setState({ characters: response.data })
     })
     .catch(error => console.log(error))
   }
@@ -25,7 +25,7 @@ class MainContainer extends Component {
     return (
     <div className={styles.wrapper}>
       <ListView characters={this.state.characters} />
-        {console.log(this.state.characters)}
+        {/* {console.log(this.state.characters)} */}
     </div>
   )
   }

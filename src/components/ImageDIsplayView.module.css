@@ -1,0 +1,14 @@
+.wrapper {
+    max-width: 500px;
+    padding: 3%;
+    margin: auto
+  }
+  
+img {
+  width: 100%;
+}
+
+.name {
+  font-size: 200%;
+  margin-top: 70px;
+}
